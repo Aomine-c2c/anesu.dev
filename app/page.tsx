@@ -208,6 +208,14 @@ export default function HomePage() {
                 </div>
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                   <Link
+                    href="https://regisbridge.page"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-primary text-white px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform hover:bg-blue-600"
+                  >
+                    View Demo
+                  </Link>
+                  <Link
                     href="https://github.com/Aomine-c2c/Regisbridge-pvt-school-website"
                     target="_blank"
                     rel="noopener noreferrer"
