@@ -2,6 +2,9 @@
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useState } from "react";
+
+const categories = ["All", "Languages", "Frameworks", "Infrastructure"];
 
 const techStack = {
   languages: [
@@ -22,6 +25,13 @@ const techStack = {
 };
 
 export default function TechStackPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const shouldShowSection = (sectionName: string) => {
+    if (activeCategory === "All") return true;
+    return activeCategory === sectionName;
+  };
+
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
       <Navigation />
@@ -38,94 +48,117 @@ export default function TechStackPage() {
           </p>
         </div>
 
+        {/* Filter Buttons */}
+        <div className="flex gap-3 mb-10 flex-wrap overflow-x-auto pb-2">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-6 text-sm font-medium transition-all ${
+                activeCategory === category
+                  ? "bg-primary text-white"
+                  : "bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         {/* Section: Languages */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-white text-2xl font-bold tracking-tight">Languages</h2>
-            <div className="h-[1px] flex-grow bg-slate-200 dark:bg-slate-800"></div>
-          </div>
+        {shouldShowSection("Languages") && (
+          <section className="mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <h2 className="text-white text-2xl font-bold tracking-tight">Languages</h2>
+              <div className="h-px grow bg-slate-200 dark:bg-slate-800"></div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techStack.languages.map((lang) => (
-              <div
-                key={lang.name}
-                className="group relative flex flex-col p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/5 hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="size-12 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-3xl">{lang.icon}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {techStack.languages.map((lang) => (
+                <div
+                  key={lang.name}
+                  className="group relative flex flex-col p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/5 hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="size-12 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-primary">
+                      <span className="material-symbols-outlined text-3xl">{lang.icon}</span>
+                    </div>
+                    <span
+                      className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
+                        lang.badge === "Core"
+                          ? "bg-primary/10 text-primary"
+                          : "bg-slate-800 text-slate-400"
+                      }`}
+                    >
+                      {lang.badge}
+                    </span>
                   </div>
-                  <span
-                    className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${
-                      lang.badge === "Core"
-                        ? "bg-primary/10 text-primary"
-                        : "bg-slate-800 text-slate-400"
-                    }`}
-                  >
-                    {lang.badge}
-                  </span>
-                </div>
 
-                <h3 className="text-white text-lg font-bold mb-1">{lang.name}</h3>
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed">{lang.description}</p>
+                  <h3 className="text-white text-lg font-bold mb-1">{lang.name}</h3>
+                  <p className="text-slate-400 text-sm mb-6 leading-relaxed">{lang.description}</p>
 
-                <div className="mt-auto">
-                  <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                    <div className="bg-primary h-full" style={{ width: `${lang.level}%` }}></div>
+                  <div className="mt-auto">
+                    <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="bg-primary h-full" style={{ width: `${lang.level}%` }}></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Section: Backend & Frontend */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-white text-2xl font-bold tracking-tight">Backend & Frontend</h2>
-            <div className="h-[1px] flex-grow bg-slate-200 dark:bg-slate-800"></div>
-          </div>
+        {shouldShowSection("Frameworks") && (
+          <section className="mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <h2 className="text-white text-2xl font-bold tracking-tight">Backend & Frontend</h2>
+              <div className="h-px grow bg-slate-200 dark:bg-slate-800"></div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {techStack.frameworks.map((framework) => (
-              <div
-                key={framework.name}
-                className="p-5 rounded-lg border border-slate-800 bg-white/5 flex flex-col gap-3"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="material-symbols-outlined text-primary">{framework.icon}</span>
-                  <h4 className="text-white font-semibold">{framework.name}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {techStack.frameworks.map((framework) => (
+                <div
+                  key={framework.name}
+                  className="p-5 rounded-lg border border-slate-800 bg-white/5 flex flex-col gap-3"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary">{framework.icon}</span>
+                    <h4 className="text-white font-semibold">{framework.name}</h4>
+                  </div>
+                  <p className="text-slate-400 text-xs">{framework.description}</p>
                 </div>
-                <p className="text-slate-400 text-xs">{framework.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Section: Infrastructure */}
-        <section className="mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-white text-2xl font-bold tracking-tight">Infrastructure & DBs</h2>
-            <div className="h-[1px] flex-grow bg-slate-200 dark:bg-slate-800"></div>
-          </div>
+        {shouldShowSection("Infrastructure") && (
+          <section className="mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <h2 className="text-white text-2xl font-bold tracking-tight">Infrastructure & DBs</h2>
+              <div className="h-px grow bg-slate-200 dark:bg-slate-800"></div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {techStack.infrastructure.map((item) => (
-              <div
-                key={item.name}
-                className="flex items-center p-6 gap-6 rounded-xl bg-slate-900/40 border border-slate-800"
-              >
-                <div className="size-16 shrink-0 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="material-symbols-outlined text-3xl text-primary">{item.icon}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {techStack.infrastructure.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-center p-6 gap-6 rounded-xl bg-slate-900/40 border border-slate-800"
+                >
+                  <div className="size-16 shrink-0 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="material-symbols-outlined text-3xl text-primary">{item.icon}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">{item.name}</h4>
+                    <p className="text-slate-400 text-sm mt-1">{item.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-white font-bold text-lg">{item.name}</h4>
-                  <p className="text-slate-400 text-sm mt-1">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
 
       <Footer />
