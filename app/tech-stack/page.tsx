@@ -2,9 +2,6 @@
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { useState } from "react";
-
-const categories = ["All", "Languages", "Backend", "Frontend", "Databases", "DevTools"];
 
 const techStack = {
   languages: [
@@ -25,8 +22,6 @@ const techStack = {
 };
 
 export default function TechStackPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
       <Navigation />
@@ -41,23 +36,6 @@ export default function TechStackPage() {
             A comprehensive look at the tools, languages, and frameworks I leverage to build robust, scalable, 
             and modern digital experiences.
           </p>
-        </div>
-
-        {/* Chips / Filter Bar */}
-        <div className="flex gap-3 mb-10 flex-wrap overflow-x-auto pb-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-6 text-sm font-medium transition-all ${
-                activeCategory === category
-                  ? "bg-primary text-white"
-                  : "bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
         </div>
 
         {/* Section: Languages */}
