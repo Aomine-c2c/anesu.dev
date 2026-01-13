@@ -30,7 +30,7 @@ export default function ResumePage() {
                       <div className="flex flex-wrap justify-center gap-4 text-xs text-slate-600">
                         <span>armutimbire@gmail.com</span>
                         <span>•</span>
-                        <span>Harare, Zimbabwe</span>
+                        <span>Masvingo, Zimbabwe</span>
                         <span>•</span>
                         <span>github.com/anesu-romeo</span>
                       </div>
@@ -153,7 +153,9 @@ export default function ResumePage() {
               <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4">Quick Links</h3>
               <div className="flex flex-col gap-3">
                 <Link
-                  href="#"
+                  href="https://github.com/Aomine-c2c"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
                 >
                   <div className="flex items-center gap-3">
@@ -166,7 +168,9 @@ export default function ResumePage() {
                 </Link>
 
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/romeo-mutimbire-011b42282"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
                 >
                   <div className="flex items-center gap-3">

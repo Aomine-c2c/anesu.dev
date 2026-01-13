@@ -180,13 +180,13 @@ export default function NowPage() {
           <footer className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm text-slate-600 dark:text-slate-400 pb-8">
             <p>© 2023 Anesu Romeo Mutimbire</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://github.com/Aomine-c2c" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 GitHub
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 Twitter
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/romeo-mutimbire-011b42282" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                 LinkedIn
               </a>
             </div>

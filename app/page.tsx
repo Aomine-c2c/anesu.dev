@@ -526,7 +526,9 @@ export default function HomePage() {
 
           <div className="mt-12 flex justify-center gap-6">
             <Link
-              href="#"
+              href="https://github.com/Aomine-c2c"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub"
               className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
@@ -539,7 +541,9 @@ export default function HomePage() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/in/romeo-mutimbire-011b42282"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
@@ -552,7 +556,7 @@ export default function HomePage() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="mailto:armutimbire@gmail.com"
               aria-label="Email"
               className="text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
             >
