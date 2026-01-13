@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Terminal 404 Error Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["'Fira Code'", "'JetBrains Mono'", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            background-image: radial-gradient(#111 10%, transparent 10%);
+            background-size: 3px 3px;
+        }
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #137fec;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-display min-h-screen flex flex-col items-center justify-center p-4">
+<!-- Main Navigation (Reused & Modified from TopNavBar) -->
+<div class="fixed top-0 left-0 w-full z-50">
+<div class="px-4 lg:px-40 flex justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-3 bg-black/50 backdrop-blur-md rounded-xl">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Anesu Romeo Mutimbire</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Home</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Projects</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">About</a>
+<a class="text-white/70 hover:text-primary text-sm font-medium transition-colors" href="#">Contact</a>
+</div>
+</div>
+</header>
+</div>
+</div>
+</div>
+<!-- Terminal Window -->
+<div class="w-full max-w-3xl bg-[#0d1117] rounded-xl border border-white/10 shadow-2xl overflow-hidden mt-20">
+<!-- Terminal Title Bar -->
+<div class="bg-[#161b22] px-4 py-3 flex items-center gap-2 border-b border-white/5">
+<div class="flex gap-2">
+<div class="w-3.5 h-3.5 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3.5 h-3.5 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3.5 h-3.5 rounded-full bg-[#27c93f]"></div>
+</div>
+<div class="flex-1 text-center text-xs text-white/40 font-mono flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                zsh — 80x24
+            </div>
+</div>
+<!-- Terminal Content -->
+<div class="p-6 font-mono text-sm md:text-base leading-relaxed">
+<!-- Terminal Output Lines -->
+<div class="space-y-2 mb-8">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-primary">anesu@portfolio:~$</span>
+<span class="text-white">visit /non-existent-page</span>
+</div>
+<div class="text-white/60">
+                    bash: /non-existent-page: No such file or directory
+                </div>
+</div>
+<!-- Big 404 Headline (Reused from HeadlineText style) -->
+<div class="py-8 text-center">
+<h1 class="text-primary tracking-widest text-5xl md:text-7xl font-bold leading-tight uppercase animate-pulse">
+                    404
+                </h1>
+<p class="text-white text-lg font-bold tracking-[0.2em] mt-2 uppercase">Page Not Found</p>
+</div>
+<!-- Scanning Status (Reused from SectionHeader style) -->
+<div class="flex items-center gap-3 text-white/40 mb-6">
+<span class="material-symbols-outlined animate-spin text-sm">sync</span>
+<h3 class="text-sm font-bold tracking-widest uppercase">Scanning for alternatives...</h3>
+</div>
+<!-- Command Suggestions -->
+<div class="space-y-4 mb-10">
+<p class="text-white/50 italic mb-2">// Suggested commands to get back on track:</p>
+<a class="group flex items-center gap-4 hover:bg-primary/10 p-2 rounded transition-all w-fit" href="#">
+<span class="text-primary font-bold">cd</span>
+<span class="text-white group-hover:underline">/home</span>
+<span class="text-white/30 text-xs hidden group-inline">Return to the landing page</span>
+</a>
+<a class="group flex items-center gap-4 hover:bg-primary/10 p-2 rounded transition-all w-fit" href="#">
+<span class="text-primary font-bold">ls</span>
+<span class="text-white group-hover:underline">/projects</span>
+<span class="text-white/30 text-xs hidden group-inline">View my latest work</span>
+</a>
+<a class="group flex items-center gap-4 hover:bg-primary/10 p-2 rounded transition-all w-fit" href="#">
+<span class="text-primary font-bold">cat</span>
+<span class="text-white group-hover:underline">about_me.txt</span>
+<span class="text-white/30 text-xs hidden group-inline">Learn more about Anesu</span>
+</a>
+<a class="group flex items-center gap-4 hover:bg-primary/10 p-2 rounded transition-all w-fit" href="#">
+<span class="text-primary font-bold">ssh</span>
+<span class="text-white group-hover:underline">contact@anesu.dev</span>
+<span class="text-white/30 text-xs hidden group-inline">Start a conversation</span>
+</a>
+</div>
+<!-- Input Prompt -->
+<div class="flex items-center gap-2 mt-auto border-t border-white/5 pt-6">
+<span class="text-primary">anesu@portfolio:~$</span>
+<span class="terminal-cursor"></span>
+</div>
+</div>
+</div>
+<!-- Footer Decoration -->
+<div class="mt-8 text-white/20 text-xs font-mono uppercase tracking-[0.3em]">
+        System Status: All other systems nominal
+    </div>
+</body></html>

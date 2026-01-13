@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optimizing Database Queries in Django - Anesu Romeo Mutimbire</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "code-bg": "#0d1117", 
+                        "code-header": "#161b22",
+                        "code-border": "#30363d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for code blocks */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #586069;
+        }
+        
+        /* Typography adjustments for readability */
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            color: #cbd5e1; /* slate-300 */
+        }
+        .article-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f1f5f9; /* slate-100 */
+            letter-spacing: -0.025em;
+        }
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #e2e8f0; /* slate-200 */
+        }
+        .article-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content code:not(pre code) {
+            background-color: rgba(19, 127, 236, 0.15);
+            color: #60a5fa;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875em;
+        }
+        .article-content a {
+            color: #137fec;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+        .article-content a:hover {
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased min-h-screen flex flex-col transition-colors duration-300">
+<!-- Reading Progress Bar -->
+<div class="fixed top-0 left-0 w-full h-1 z-50 bg-transparent">
+<div class="h-full bg-primary shadow-[0_0_10px_rgba(19,127,236,0.5)]" style="width: 35%;"></div>
+</div>
+<!-- Header -->
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-background-light/80 dark:bg-background-dark/80 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo / Name -->
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-8 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<span class="hidden sm:block text-slate-900 dark:text-white font-bold tracking-tight">Anesu Romeo Mutimbire</span>
+</div>
+<!-- Back Link -->
+<a class="group flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg transition-transform group-hover:-translate-x-1">arrow_back</span>
+                    Back to Writing
+                </a>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Main Layout Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Article Column -->
+<article class="lg:col-span-8 lg:col-start-2 xl:col-span-7 xl:col-start-2 flex flex-col">
+<!-- Hero Section -->
+<header class="mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
+<!-- Chips -->
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                            #Django
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                            #Performance
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                            #SQL
+                        </span>
+</div>
+<!-- Title -->
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight mb-4">
+                        Optimizing Database Queries in Django
+                    </h1>
+<!-- Subtitle -->
+<p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 font-normal leading-relaxed mb-6">
+                        A deep dive into <code class="text-base">select_related</code> and <code class="text-base">prefetch_related</code> for solving the N+1 problem and boosting API performance.
+                    </p>
+<!-- Meta -->
+<div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700">
+<img alt="Portrait of the author, Anesu Romeo Mutimbire" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIedAhSgPdUVDbxphS8PGHJAYfip4_MJ7v2HbBisgIzSZ_X5b45Y6MxFIIneKX8YX9Oa9aUDT0tmkpESnlq6Gih86YUJhOzC2jY9zqVt7rbAW0lCuG93YWfpa-Vwh8vLpXmfT_9ujoQQL_0LZCexsWez1ZBGIxjE1r1suRCqedojFDT84z3FxlMeCk8LN72pKzoZUX6xGwGlkkfOCJFJLrhjFxKaLsw2jv0Zc140g1Ur5nn-_IuAKNmweO6tLABwqCtMIq7jcWDEo"/>
+</div>
+<span class="font-medium text-slate-900 dark:text-slate-200">Anesu Romeo</span>
+</div>
+<span class="text-slate-300 dark:text-slate-700">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Oct 24, 2023</span>
+</div>
+<span class="text-slate-300 dark:text-slate-700">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>8 min read</span>
+</div>
+</div>
+</header>
+<!-- Article Body -->
+<div class="article-content">
+<p>
+                        Django's ORM is incredibly powerful, abstracting away the complexities of raw SQL. However, this abstraction can sometimes be a double-edged sword. It's easy to write Python code that looks efficient but generates hundreds of duplicate database queries under the hood. This is known as the <strong>N+1 query problem</strong>.
+                    </p>
+<p>
+                        In this article, we'll explore how to identify these performance bottlenecks and fix them using Django's built-in query optimization tools.
+                    </p>
+<h2 id="the-problem">The N+1 Problem</h2>
+<p>
+                        Let's imagine a simple blog application with two models: <code>Author</code> and <code>Post</code>. Each post belongs to one author.
+                    </p>
+<!-- Code Block Component -->
+<div class="rounded-lg bg-code-bg border border-code-border overflow-hidden my-6 shadow-xl">
+<div class="flex items-center justify-between px-4 py-2 bg-code-header border-b border-code-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm">code</span>
+<span class="text-xs font-mono text-slate-400">models.py</span>
+</div>
+<button class="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                Copy
+                            </button>
+</div>
+<pre class="p-4 overflow-x-auto custom-scrollbar text-sm font-mono leading-relaxed"><code class="block w-full"><span class="text-[#ff7b72]">class</span> <span class="text-[#d2a8ff]">Author</span>(<span class="text-[#d2a8ff]">models</span>.<span class="text-[#d2a8ff]">Model</span>):
+    name = models.CharField(max_length=<span class="text-[#79c0ff]">100</span>)
+
+<span class="text-[#ff7b72]">class</span> <span class="text-[#d2a8ff]">Post</span>(<span class="text-[#d2a8ff]">models</span>.<span class="text-[#d2a8ff]">Model</span>):
+    title = models.CharField(max_length=<span class="text-[#79c0ff]">200</span>)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    content = models.TextField()</code></pre>
+</div>
+<p>
+                        Now, consider a view where we want to list all posts along with their author's name. A naive implementation might look like this:
+                    </p>
+<!-- Code Block Component -->
+<div class="rounded-lg bg-code-bg border border-code-border overflow-hidden my-6 shadow-xl">
+<div class="flex items-center justify-between px-4 py-2 bg-code-header border-b border-code-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm">terminal</span>
+<span class="text-xs font-mono text-slate-400">Inefficient Query</span>
+</div>
+</div>
+<pre class="p-4 overflow-x-auto custom-scrollbar text-sm font-mono leading-relaxed"><code class="block w-full"><span class="text-[#8b949e]"># This hits the DB once to get all posts</span>
+posts = Post.objects.all()
+
+<span class="text-[#ff7b72]">for</span> post <span class="text-[#ff7b72]">in</span> posts:
+    <span class="text-[#8b949e]"># CRITICAL: This hits the DB again for EACH post to fetch the author</span>
+    <span class="text-[#d2a8ff]">print</span>(f<span class="text-[#a5d6ff]">"{post.title} by {post.author.name}"</span>)</code></pre>
+</div>
+<p>
+                        If you have 100 posts, Django executes 1 query to fetch the posts, and then 100 additional queries to fetch the author for each post. That's <strong>101 queries</strong> for a single page load.
+                    </p>
+<!-- Callout Component -->
+<div class="my-8 p-4 bg-primary/10 border-l-4 border-primary rounded-r-lg">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<h4 class="font-bold text-primary mb-1">Why does this happen?</h4>
+<p class="text-sm text-slate-300 m-0 leading-normal">
+                                    By default, Django's QuerySets are lazy. Accessing a ForeignKey attribute that hasn't been pre-fetched triggers a new database lookup immediately.
+                                </p>
+</div>
+</div>
+</div>
+<h2 id="solution-select-related">The Solution: select_related</h2>
+<p>
+                        For "single-valued" relationships (like ForeignKey or OneToOneField), use <code>select_related</code>. It performs a SQL JOIN and includes the fields of the related object in the SELECT statement.
+                    </p>
+<div class="rounded-lg bg-code-bg border border-code-border overflow-hidden my-6 shadow-xl">
+<div class="flex items-center justify-between px-4 py-2 bg-code-header border-b border-code-border">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-sm">check_circle</span>
+<span class="text-xs font-mono text-slate-400">Optimized Query</span>
+</div>
+</div>
+<pre class="p-4 overflow-x-auto custom-scrollbar text-sm font-mono leading-relaxed"><code class="block w-full"><span class="text-[#8b949e]"># Fetches posts AND authors in a single complex query</span>
+posts = Post.objects.select_related(<span class="text-[#a5d6ff]">'author'</span>).all()
+
+<span class="text-[#ff7b72]">for</span> post <span class="text-[#ff7b72]">in</span> posts:
+    <span class="text-[#8b949e]"># No extra DB hits here! Data is already in memory.</span>
+    <span class="text-[#d2a8ff]">print</span>(f<span class="text-[#a5d6ff]">"{post.title} by {post.author.name}"</span>)</code></pre>
+</div>
+<h2 id="prefetch-related">What about prefetch_related?</h2>
+<p>
+                        When dealing with Many-to-Many or Reverse Foreign Key relationships, <code>select_related</code> won't work because a single SQL row cannot represent multiple related objects efficiently. This is where <code>prefetch_related</code> shines.
+                    </p>
+<p>
+                        It works by executing two separate queries:
+                    </p>
+<ul>
+<li>Query 1: Fetch the main objects.</li>
+<li>Query 2: Fetch all related objects for the IDs found in Query 1.</li>
+<li>Django then joins them together in Python memory.</li>
+</ul>
+<p>
+                        This reduces the complexity from N+1 to exactly 2 queries, regardless of dataset size.
+                    </p>
+<h2 id="conclusion">Conclusion</h2>
+<p>
+                        Database optimization is often the lowest-hanging fruit when improving Django application performance. By consistently using the Django Debug Toolbar to inspect query counts and applying <code>select_related</code> and <code>prefetch_related</code> appropriately, you can scale your application significantly without rewriting complex logic.
+                    </p>
+</div>
+<!-- Separator -->
+<div class="w-full h-px bg-slate-200 dark:bg-slate-800 my-12"></div>
+<!-- Footer / Next Article -->
+<footer class="flex flex-col gap-8">
+<!-- Share -->
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Share this article</span>
+<div class="flex gap-4">
+<button aria-label="Share on Twitter" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-[#1DA1F2] transition-colors">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path></svg>
+</button>
+<button aria-label="Share on LinkedIn" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-[#0A66C2] transition-colors">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</button>
+</div>
+</div>
+<!-- Next Card -->
+<div class="group relative overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 p-1 hover:border-primary dark:hover:border-primary transition-colors cursor-pointer">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">arrow_forward</span>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-6 p-6">
+<div class="flex-1">
+<span class="text-xs font-bold text-primary uppercase tracking-wide mb-2 block">Read Next</span>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                    Understanding React Hooks: A Comprehensive Guide
+                                </h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                                    Master useEffect, useState, and custom hooks to write cleaner, more functional components.
+                                </p>
+</div>
+</div>
+</div>
+</footer>
+</article>
+<!-- Sidebar / ToC -->
+<aside class="hidden lg:block lg:col-span-4 xl:col-span-3 lg:pl-8">
+<div class="sticky top-28">
+<h3 class="uppercase text-xs font-bold text-slate-500 tracking-wider mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">list</span>
+                        On this page
+                    </h3>
+<nav>
+<ul class="relative border-l border-slate-200 dark:border-slate-800 space-y-4">
+<!-- Active item -->
+<li class="relative pl-6">
+<div class="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-primary"></div>
+<a class="block text-sm font-medium text-primary hover:text-primary transition-colors" href="#">
+                                    The N+1 Problem
+                                </a>
+</li>
+<!-- Inactive items -->
+<li class="relative pl-6">
+<a class="block text-sm font-normal text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#solution-select-related">
+                                    The Solution: select_related
+                                </a>
+</li>
+<li class="relative pl-6">
+<a class="block text-sm font-normal text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#prefetch-related">
+                                    What about prefetch_related?
+                                </a>
+</li>
+<li class="relative pl-6">
+<a class="block text-sm font-normal text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#conclusion">
+                                    Conclusion
+                                </a>
+</li>
+</ul>
+</nav>
+<!-- Newsletter or Call to Action Mini-Card -->
+<div class="mt-12 p-5 rounded-lg bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-2">Like this content?</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Subscribe to my newsletter for weekly backend engineering tips.</p>
+<form class="flex flex-col gap-2">
+<input class="bg-white dark:bg-background-dark border border-slate-300 dark:border-slate-700 rounded px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-primary" placeholder="email@example.com" type="email"/>
+<button class="bg-primary hover:bg-blue-600 text-white text-xs font-medium py-2 px-3 rounded transition-colors" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Site Footer -->
+<footer class="mt-auto py-8 bg-slate-100 dark:bg-[#0b1219] border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2023 Anesu Romeo Mutimbire. All rights reserved.</p>
+<div class="flex gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Twitter</a>
+<a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">GitHub</a>
+<a class="hover:text-slate-900 dark:hover:text-white transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

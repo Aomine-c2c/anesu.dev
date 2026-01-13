@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Stack Deep Dive | Anesu Romeo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#000000",
+                        "border-dark": "#222222",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-border-dark px-6 md:px-20 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_330)">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_330"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Anesu Romeo</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Projects</a>
+<a class="text-sm font-medium text-primary" href="#">Stack</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Blog</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 md:px-20 lg:px-40 py-12">
+<!-- PageHeading -->
+<div class="mb-12">
+<h1 class="text-white text-5xl md:text-6xl font-black leading-tight tracking-[-0.033em] mb-4">Tech Stack</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl">
+                A comprehensive look at the tools, languages, and frameworks I leverage to build robust, scalable, and modern digital experiences.
+            </p>
+</div>
+<!-- Chips / Filter Bar -->
+<div class="flex gap-3 mb-10 flex-wrap overflow-x-auto pb-2">
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-primary px-6 text-white text-sm font-medium transition-all">
+                All
+            </button>
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-border-dark px-6 text-slate-800 dark:text-slate-200 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                Languages
+            </button>
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-border-dark px-6 text-slate-800 dark:text-slate-200 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                Backend
+            </button>
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-border-dark px-6 text-slate-800 dark:text-slate-200 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                Frontend
+            </button>
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-border-dark px-6 text-slate-800 dark:text-slate-200 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                Databases
+            </button>
+<button class="flex h-10 shrink-0 items-center justify-center rounded-lg bg-slate-200 dark:bg-border-dark px-6 text-slate-800 dark:text-slate-200 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-800 transition-all">
+                DevTools
+            </button>
+</div>
+<!-- Section: Languages -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-6">
+<h2 class="text-white text-2xl font-bold tracking-tight">Languages</h2>
+<div class="h-[1px] flex-grow bg-slate-200 dark:bg-border-dark"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Tool Card: Python -->
+<div class="group relative flex flex-col p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white/5 hover:border-primary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Core</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-1">Python</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Primary choice for backend services, automation scripts, and data processing pipelines.</p>
+<div class="mt-auto">
+<div class="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Tool Card: TypeScript -->
+<div class="group relative flex flex-col p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white/5 hover:border-primary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Core</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-1">TypeScript</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Ensuring type safety across the full stack, from React components to Node.js APIs.</p>
+<div class="mt-auto">
+<div class="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+</div>
+<!-- Tool Card: C++ -->
+<div class="group relative flex flex-col p-6 rounded-xl border border-slate-200 dark:border-border-dark bg-white/5 hover:border-primary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">settings_ethernet</span>
+</div>
+<span class="px-2 py-1 rounded bg-slate-800 text-slate-400 text-[10px] font-bold uppercase tracking-wider">Secondary</span>
+</div>
+<h3 class="text-white text-lg font-bold mb-1">C++</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Utilized for performance-critical algorithms and competitive programming challenges.</p>
+<div class="mt-auto">
+<div class="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary/40 h-full w-[65%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Frameworks & Backend -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-6">
+<h2 class="text-white text-2xl font-bold tracking-tight">Backend &amp; Frontend</h2>
+<div class="h-[1px] flex-grow bg-slate-200 dark:bg-border-dark"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Django -->
+<div class="p-5 rounded-lg border border-border-dark bg-white/5 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">dns</span>
+<h4 class="text-white font-semibold">Django</h4>
+</div>
+<p class="text-slate-400 text-xs">Primary backend framework for robust and secure API development.</p>
+</div>
+<!-- React -->
+<div class="p-5 rounded-lg border border-border-dark bg-white/5 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">layers</span>
+<h4 class="text-white font-semibold">React</h4>
+</div>
+<p class="text-slate-400 text-xs">Building dynamic and interactive user interfaces with reusable components.</p>
+</div>
+<!-- Next.js -->
+<div class="p-5 rounded-lg border border-border-dark bg-white/5 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<h4 class="text-white font-semibold">Next.js</h4>
+</div>
+<p class="text-slate-400 text-xs">Optimized full-stack framework for SEO and high-performance web apps.</p>
+</div>
+<!-- Node.js -->
+<div class="p-5 rounded-lg border border-border-dark bg-white/5 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">token</span>
+<h4 class="text-white font-semibold">Node.js</h4>
+</div>
+<p class="text-slate-400 text-xs">Server-side JavaScript runtime for real-time and scalable systems.</p>
+</div>
+</div>
+</section>
+<!-- Section: Infrastructure -->
+<section class="mb-16">
+<div class="flex items-center gap-4 mb-6">
+<h2 class="text-white text-2xl font-bold tracking-tight">Infrastructure &amp; DBs</h2>
+<div class="h-[1px] flex-grow bg-slate-200 dark:bg-border-dark"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Database Grid Item -->
+<div class="flex items-center p-6 gap-6 rounded-xl bg-slate-900/40 border border-border-dark">
+<div class="size-16 shrink-0 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary">database</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg">PostgreSQL &amp; Redis</h4>
+<p class="text-slate-400 text-sm mt-1">Reliable relational storage coupled with lightning-fast in-memory caching for performance.</p>
+</div>
+</div>
+<!-- DevTools Grid Item -->
+<div class="flex items-center p-6 gap-6 rounded-xl bg-slate-900/40 border border-border-dark">
+<div class="size-16 shrink-0 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary">view_in_ar</span>
+</div>
+<div>
+<h4 class="text-white font-bold text-lg">Docker &amp; Kubernetes</h4>
+<p class="text-slate-400 text-sm mt-1">Containerization and orchestration for consistent deployment across environments.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-border-dark py-12 px-6">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="size-5 bg-primary rounded-sm"></div>
+<span class="font-bold text-slate-900 dark:text-white">Anesu Romeo</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">Twitter</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-primary transition-colors text-sm" href="#">LinkedIn</a>
+</div>
+<p class="text-slate-500 text-xs">© 2024 Design. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

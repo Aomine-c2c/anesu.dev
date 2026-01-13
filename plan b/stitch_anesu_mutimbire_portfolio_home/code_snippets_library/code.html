@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Snippets Library - Anesu.dev</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "primary-dark": "#0b63c1",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "surface-dark": "#1c2632",
+              "surface-border": "#283039",
+              "code-bg": "#0d1117",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "mono": ["JetBrains Mono", "monospace"],
+            },
+            borderRadius: {"DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for code blocks */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #283039;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #3e4a56;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden min-h-screen flex flex-col">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-gray-200 dark:border-surface-border bg-white/90 dark:bg-[#111418]/90 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined" style="font-size: 24px;">terminal</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Anesu.dev</h2>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Projects</a>
+<a class="text-primary dark:text-white text-sm font-bold" href="#">Snippets</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Blog</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Contact</a>
+</nav>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-all shadow-sm shadow-blue-500/20">
+                        Hire Me
+                    </button>
+</div>
+<!-- Mobile Menu Button -->
+<button class="md:hidden p-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Layout -->
+<div class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="lg:sticky lg:top-24 space-y-8">
+<!-- Categories -->
+<div class="space-y-4">
+<div>
+<h3 class="text-slate-900 dark:text-white text-base font-bold mb-1">Categories</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Filter by tech stack</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-primary/10 border border-primary/20 text-primary dark:text-white font-medium text-sm group transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+                                    All Snippets
+                                </div>
+<span class="bg-primary/20 text-xs px-2 py-0.5 rounded-full">42</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-surface-border text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium text-sm transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">code_blocks</span>
+                                    Python
+                                </div>
+<span class="text-xs text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400">12</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-surface-border text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium text-sm transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+                                    Django
+                                </div>
+<span class="text-xs text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400">8</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-surface-border text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium text-sm transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">javascript</span>
+                                    JavaScript
+                                </div>
+<span class="text-xs text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400">15</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-surface-border text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium text-sm transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">css</span>
+                                    CSS / Tailwind
+                                </div>
+<span class="text-xs text-slate-400 dark:text-slate-600 group-hover:text-slate-600 dark:group-hover:text-slate-400">7</span>
+</a>
+</nav>
+</div>
+<!-- Tags / Quick Links -->
+<div class="space-y-4 pt-4 border-t border-gray-200 dark:border-surface-border">
+<h3 class="text-slate-900 dark:text-white text-sm font-bold">Popular Tags</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-border text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-gray-200 dark:hover:bg-surface-border/80 transition-colors">#auth</span>
+<span class="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-border text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-gray-200 dark:hover:bg-surface-border/80 transition-colors">#middleware</span>
+<span class="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-border text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-gray-200 dark:hover:bg-surface-border/80 transition-colors">#hooks</span>
+<span class="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-border text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-gray-200 dark:hover:bg-surface-border/80 transition-colors">#grid</span>
+<span class="px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-border text-slate-600 dark:text-slate-300 text-xs font-medium cursor-pointer hover:bg-gray-200 dark:hover:bg-surface-border/80 transition-colors">#database</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-w-0">
+<!-- Page Header & Search -->
+<div class="flex flex-col gap-6 mb-10">
+<div class="flex flex-col gap-2">
+<h1 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">Snippets</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg">A curated collection of reusable code blocks and technical solutions.</p>
+</div>
+<!-- Prominent Search Bar -->
+<div class="relative group z-10 sticky top-20 lg:top-auto">
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+<div class="relative flex items-center bg-white dark:bg-surface-dark border border-gray-200 dark:border-surface-border rounded-xl shadow-lg shadow-black/5 overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 focus-within:border-primary transition-all">
+<div class="pl-4 text-slate-400 dark:text-slate-500">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-0 py-4 px-4 text-base" placeholder="Search snippets by keyword, tag, or language (e.g. 'django auth')..." type="text"/>
+<div class="hidden sm:flex pr-4 gap-2 text-xs font-mono text-slate-400">
+<span class="px-2 py-1 rounded bg-gray-100 dark:bg-surface-border">⌘ K</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Snippets Feed -->
+<div class="flex flex-col gap-6">
+<!-- Card 1: Django Middleware -->
+<article class="flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-surface-border shadow-sm overflow-hidden group">
+<div class="p-6 border-b border-gray-100 dark:border-surface-border/50">
+<div class="flex justify-between items-start gap-4">
+<div class="space-y-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#3776ab]/10 text-[#3776ab] dark:text-[#60a5fa] ring-1 ring-inset ring-[#3776ab]/20">
+<span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                                            Python
+                                        </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#092e20]/10 text-[#092e20] dark:text-[#4ade80] ring-1 ring-inset ring-[#092e20]/20 dark:ring-[#4ade80]/20">
+                                            Django
+                                        </span>
+<span class="text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+                                            Updated Oct 24
+                                        </span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">Django Custom Middleware Template</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed max-w-2xl">
+                                        A thread-safe middleware template class for intercepting requests and responses in Django applications. Useful for custom logging, request modification, or global error handling.
+                                    </p>
+</div>
+<button aria-label="Bookmark snippet" class="shrink-0 p-2 rounded-lg text-slate-400 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- Code Preview Window -->
+<div class="relative bg-code-bg">
+<div class="flex items-center justify-between px-4 py-2 border-b border-gray-800 bg-[#161b22]">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+</div>
+<span class="ml-2 text-xs text-slate-500 font-mono">utils/middleware.py</span>
+</div>
+<button class="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    Copy
+                                </button>
+</div>
+<div class="p-5 overflow-x-auto custom-scrollbar">
+<pre class="text-sm font-mono leading-relaxed"><code class="language-python">
+<span class="text-purple-400">class</span> <span class="text-yellow-400">SimpleMiddleware</span>:
+    <span class="text-slate-500 italic"># One-time configuration and initialization.</span>
+    <span class="text-purple-400">def</span> <span class="text-blue-400">__init__</span>(<span class="text-purple-400">self</span>, get_response):
+        <span class="text-purple-400">self</span>.get_response = get_response
+
+    <span class="text-purple-400">def</span> <span class="text-blue-400">__call__</span>(<span class="text-purple-400">self</span>, request):
+        <span class="text-slate-500 italic"># Code to be executed for each request before</span>
+        <span class="text-slate-500 italic"># the view (and later middleware) are called.</span>
+        
+        response = <span class="text-purple-400">self</span>.get_response(request)
+
+        <span class="text-slate-500 italic"># Code to be executed for each request/response after</span>
+        <span class="text-slate-500 italic"># the view is called.</span>
+        <span class="text-purple-400">return</span> response
+
+    <span class="text-purple-400">def</span> <span class="text-blue-400">process_view</span>(<span class="text-purple-400">self</span>, request, view_func, view_args, view_kwargs):
+        <span class="text-slate-500 italic"># Called just before Django calls the view.</span>
+        <span class="text-purple-400">return None</span>
+                                </code></pre>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-code-bg to-transparent pointer-events-none"></div>
+</div>
+<div class="bg-gray-50 dark:bg-[#161b22] px-6 py-3 border-t border-gray-200 dark:border-surface-border flex justify-end">
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                                Expand Code <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</a>
+</div>
+</article>
+<!-- Card 2: JavaScript Debounce -->
+<article class="flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-surface-border shadow-sm overflow-hidden group">
+<div class="p-6 border-b border-gray-100 dark:border-surface-border/50">
+<div class="flex justify-between items-start gap-4">
+<div class="space-y-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#f7df1e]/10 text-[#857504] dark:text-[#f7df1e] ring-1 ring-inset ring-[#f7df1e]/20">
+<span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                                            JavaScript
+                                        </span>
+<span class="text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+                                            Updated Sep 15
+                                        </span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">Debounce Function Utility</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed max-w-2xl">
+                                        A robust debounce implementation to limit the rate at which a function can fire. Essential for search inputs, window resize events, and scroll handlers.
+                                    </p>
+</div>
+<button aria-label="Bookmark snippet" class="shrink-0 p-2 rounded-lg text-slate-400 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- Code Preview Window -->
+<div class="relative bg-code-bg">
+<div class="flex items-center justify-between px-4 py-2 border-b border-gray-800 bg-[#161b22]">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+</div>
+<span class="ml-2 text-xs text-slate-500 font-mono">helpers/debounce.js</span>
+</div>
+<button class="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    Copy
+                                </button>
+</div>
+<div class="p-5 overflow-x-auto custom-scrollbar">
+<pre class="text-sm font-mono leading-relaxed"><code class="language-javascript">
+<span class="text-purple-400">export function</span> <span class="text-blue-400">debounce</span>(func, wait) {
+    <span class="text-purple-400">let</span> timeout;
+
+    <span class="text-purple-400">return function</span> executedFunction(...args) {
+        <span class="text-purple-400">const</span> later = () =&gt; {
+            clearTimeout(timeout);
+            func(...args);
+        };
+
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+<span class="text-slate-500 italic">// Usage example:</span>
+<span class="text-purple-400">const</span> handleSearch = debounce((e) =&gt; {
+    <span class="text-slate-500 italic">// API call logic here</span>
+    console.<span class="text-blue-400">log</span>(e.target.value);
+}, <span class="text-orange-400">300</span>);
+                                </code></pre>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#161b22] px-6 py-3 border-t border-gray-200 dark:border-surface-border flex justify-end">
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                                Expand Code <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</a>
+</div>
+</article>
+<!-- Card 3: CSS Grid Centering -->
+<article class="flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-gray-200 dark:border-surface-border shadow-sm overflow-hidden group">
+<div class="p-6 border-b border-gray-100 dark:border-surface-border/50">
+<div class="flex justify-between items-start gap-4">
+<div class="space-y-3">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#264de4]/10 text-[#264de4] dark:text-[#60a5fa] ring-1 ring-inset ring-[#264de4]/20">
+<span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                                            CSS
+                                        </span>
+<span class="text-xs text-slate-400 dark:text-slate-500 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">update</span>
+                                            Updated Aug 02
+                                        </span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">Absolute Centering with Grid</h3>
+<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed max-w-2xl">
+                                        The modern, 3-line solution to perfectly center any element within its parent container using CSS Grid. Goodbye `margin: 0 auto`.
+                                    </p>
+</div>
+<button aria-label="Bookmark snippet" class="shrink-0 p-2 rounded-lg text-slate-400 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- Code Preview Window -->
+<div class="relative bg-code-bg">
+<div class="flex items-center justify-between px-4 py-2 border-b border-gray-800 bg-[#161b22]">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+</div>
+<span class="ml-2 text-xs text-slate-500 font-mono">styles/layout.css</span>
+</div>
+<button class="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors bg-white/5 hover:bg-white/10 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    Copy
+                                </button>
+</div>
+<div class="p-5 overflow-x-auto custom-scrollbar">
+<pre class="text-sm font-mono leading-relaxed"><code class="language-css">
+<span class="text-yellow-400">.place-center</span> {
+    <span class="text-purple-400">display</span>: grid;
+    <span class="text-purple-400">place-items</span>: center;
+    <span class="text-purple-400">min-height</span>: <span class="text-orange-400">100vh</span>; <span class="text-slate-500 italic">/* Optional: for full screen centering */</span>
+}
+                                </code></pre>
+</div>
+</div>
+<div class="bg-gray-50 dark:bg-[#161b22] px-6 py-3 border-t border-gray-200 dark:border-surface-border flex justify-end">
+<a class="text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                                Expand Code <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</a>
+</div>
+</article>
+<!-- Load More -->
+<div class="flex justify-center pt-8">
+<button class="flex items-center gap-2 px-6 py-3 rounded-lg border border-gray-200 dark:border-surface-border bg-white dark:bg-surface-dark text-slate-900 dark:text-white hover:bg-gray-50 dark:hover:bg-surface-border font-medium transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+                            Load More Snippets
+                        </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto border-t border-gray-200 dark:border-surface-border bg-white dark:bg-[#111418] py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                © 2024 Anesu Romeo Mutimbire. All rights reserved.
+            </p>
+<div class="flex items-center gap-6">
+<a class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
