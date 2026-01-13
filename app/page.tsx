@@ -242,6 +242,84 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Project 3: GZU Online Marketplace */}
+            <div className="group rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-300 dark:hover:border-white/10 transition-all hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 shadow-sm dark:shadow-none">
+              <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900 dark:to-teal-900 flex items-center justify-center text-emerald-200 dark:text-white/20">
+                  <span className="material-symbols-outlined text-6xl opacity-20">storefront</span>
+                </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                  <Link
+                    href="https://github.com/Aomine-c2c/Great-Zimbabwe-University-Online-Marketplace"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform hover:bg-slate-100"
+                  >
+                    View Code
+                  </Link>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">GZU Online Marketplace</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+                  University marketplace platform enabling students to buy/sell items, post services, and connect with peers. Built with Django and modern web technologies.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Django
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Python
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    JavaScript
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Bootstrap
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 4: Personal Portfolio */}
+            <div className="group rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-300 dark:hover:border-white/10 transition-all hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 shadow-sm dark:shadow-none">
+              <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-50 to-fuchsia-50 dark:from-violet-900 dark:to-fuchsia-900 flex items-center justify-center text-violet-200 dark:text-white/20">
+                  <span className="material-symbols-outlined text-6xl opacity-20">web</span>
+                </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                  <Link
+                    href="https://github.com/Aomine-c2c/anesu.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform hover:bg-slate-100"
+                  >
+                    View Code
+                  </Link>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Personal Portfolio (This Site!)</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+                  Modern portfolio showcasing projects, blog posts, and technical skills. Built with Next.js 14, featuring dark mode, EmailJS integration, and responsive design.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Next.js 14
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    TypeScript
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Tailwind CSS
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    EmailJS
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
