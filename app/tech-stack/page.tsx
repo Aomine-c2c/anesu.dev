@@ -4,23 +4,32 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
 
-const categories = ["All", "Languages", "Frameworks", "Infrastructure"];
+const categories = ["All", "Languages", "Frameworks", "Infrastructure", "Tools"];
 
 const techStack = {
   languages: [
     { name: "Python", icon: "terminal", level: 90, badge: "Core", description: "Primary choice for backend services, automation scripts, and data processing pipelines." },
     { name: "TypeScript", icon: "code", level: 85, badge: "Core", description: "Ensuring type safety across the full stack, from React components to Node.js APIs." },
+    { name: "JavaScript", icon: "javascript", level: 85, badge: "Core", description: "Building interactive web applications and modern full-stack solutions." },
+    { name: "Java", icon: "coffee", level: 70, badge: "Secondary", description: "Object-oriented programming for enterprise applications and Android development." },
     { name: "C++", icon: "settings_ethernet", level: 65, badge: "Secondary", description: "Utilized for performance-critical algorithms and competitive programming challenges." },
+    { name: "HTML & CSS", icon: "web", level: 90, badge: "Core", description: "Crafting semantic, accessible, and responsive user interfaces." },
   ],
   frameworks: [
     { name: "Django", icon: "dns", description: "Primary backend framework for robust and secure API development." },
+    { name: "FastAPI", icon: "speed", description: "Modern, fast Python web framework for building APIs with automatic documentation." },
     { name: "React", icon: "layers", description: "Building dynamic and interactive user interfaces with reusable components." },
-    { name: "Next.js", icon: "bolt", description: "Optimized full-stack framework for SEO and high-performance web apps." },
+    { name: "Next.js 14", icon: "bolt", description: "Optimized full-stack framework for SEO and high-performance web apps." },
     { name: "Node.js", icon: "token", description: "Server-side JavaScript runtime for real-time and scalable systems." },
+    { name: "Vite", icon: "flash_on", description: "Lightning-fast frontend build tool for modern web development." },
+    { name: "Tailwind CSS", icon: "palette", description: "Utility-first CSS framework for rapid UI development." },
+    { name: "Vercel", icon: "cloud", description: "Deployment and hosting platform for modern web applications." },
   ],
   infrastructure: [
-    { name: "PostgreSQL & Redis", icon: "database", description: "Reliable relational storage coupled with lightning-fast in-memory caching for performance." },
-    { name: "Docker & Kubernetes", icon: "view_in_ar", description: "Containerization and orchestration for consistent deployment across environments." },
+    { name: "PostgreSQL", icon: "database", description: "Reliable relational database for complex queries and data integrity." },
+    { name: "Docker", icon: "view_in_ar", description: "Containerization for consistent deployment across environments." },
+    { name: "Git & GitHub", icon: "code_blocks", description: "Version control and collaborative development workflow." },
+    { name: "JWT & REST APIs", icon: "security", description: "Secure authentication and RESTful API design patterns." },
   ],
 };
 
