@@ -20,12 +20,18 @@ export function Navigation() {
             </h2>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             <Link
               href="/#projects"
               className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Projects
+            </Link>
+            <Link
+              href="/blog"
+              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Blog
             </Link>
             <Link
               href="/#about"
@@ -34,17 +40,52 @@ export function Navigation() {
               About
             </Link>
             <Link
-              href="/#skills"
-              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Skills
-            </Link>
-            <Link
               href="/#contact"
               className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Contact
             </Link>
+
+            {/* More dropdown */}
+            <div className="relative group">
+              <button className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-0.5">
+                More
+                <span className="material-symbols-outlined text-[18px]">expand_more</span>
+              </button>
+              
+              <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2">
+                <Link
+                  href="/resume"
+                  className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                >
+                  Resume
+                </Link>
+                <Link
+                  href="/tech-stack"
+                  className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                >
+                  Tech Stack
+                </Link>
+                <Link
+                  href="/now"
+                  className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                >
+                  Now
+                </Link>
+                <Link
+                  href="/academic"
+                  className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                >
+                  Academic
+                </Link>
+                <Link
+                  href="/snippets"
+                  className="block px-4 py-2.5 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors"
+                >
+                  Code Snippets
+                </Link>
+              </div>
+            </div>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -68,13 +109,20 @@ export function Navigation() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-slate-200 dark:border-white/10 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md">
-          <div className="px-4 py-4 space-y-3">
+          <div className="px-4 py-4 space-y-1">
             <Link
               href="/#projects"
               className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
+            </Link>
+            <Link
+              href="/blog"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="/#about"
@@ -84,18 +132,47 @@ export function Navigation() {
               About
             </Link>
             <Link
-              href="/#skills"
-              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Skills
-            </Link>
-            <Link
               href="/#contact"
               className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
+            </Link>
+            <div className="border-t border-slate-200 dark:border-slate-700 my-2"></div>
+            <Link
+              href="/resume"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Resume
+            </Link>
+            <Link
+              href="/tech-stack"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Tech Stack
+            </Link>
+            <Link
+              href="/now"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Now
+            </Link>
+            <Link
+              href="/academic"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Academic
+            </Link>
+            <Link
+              href="/snippets"
+              className="block text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Code Snippets
             </Link>
           </div>
         </div>

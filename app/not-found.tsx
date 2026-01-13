@@ -146,7 +146,7 @@ export default function NotFound() {
               className="group flex items-center gap-4 hover:bg-primary/10 p-2 rounded transition-all w-fit"
             >
               <span className="text-primary font-bold">ssh</span>
-              <span className="text-white group-hover:underline">contact@anesu.dev</span>
+              <span className="text-white group-hover:underline">armutimbire@gmail.com</span>
               <span className="text-white/30 text-xs hidden group-inline">
                 Start a conversation
               </span>

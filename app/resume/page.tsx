@@ -28,7 +28,7 @@ export default function ResumePage() {
                       <h2 className="text-3xl font-bold text-slate-900 mb-2">Anesu Romeo Mutimbire</h2>
                       <p className="text-sm text-slate-600 mb-4">Full Stack Developer</p>
                       <div className="flex flex-wrap justify-center gap-4 text-xs text-slate-600">
-                        <span>contact@anesu.dev</span>
+                        <span>armutimbire@gmail.com</span>
                         <span>•</span>
                         <span>Harare, Zimbabwe</span>
                         <span>•</span>
@@ -179,7 +179,7 @@ export default function ResumePage() {
                 </Link>
 
                 <Link
-                  href="mailto:contact@anesu.dev"
+                  href="mailto:armutimbire@gmail.com"
                   className="group flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
                 >
                   <div className="flex items-center gap-3">

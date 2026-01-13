@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Anesu Romeo Mutimbire
 
-## Getting Started
+Modern portfolio website built with Next.js 16, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **12 Pages**: Home, Blog, Projects, Contact, Resume, Tech Stack, Now, Academic, Snippets, 404
+- **Dark/Light Mode**: Theme toggle with persistence via `next-themes`
+- **Fully Responsive**: Mobile-first design with smooth transitions
+- **Type-Safe**: Built with TypeScript for reliability
+- **SEO Optimized**: Proper metadata and semantic HTML
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16.1.1 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Fonts**: Inter, Space Grotesk (via `next/font/google`)
+- **Icons**: Material Symbols Outlined
+- **Theme**: next-themes
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio101/
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout with fonts & theme
+│   ├── page.tsx           # Home page
+│   ├── blog/              # Blog pages
+│   ├── projects/          # Project pages
+│   ├── contact/           # Contact pages
+│   └── ...                # Other pages
+├── components/            # Reusable components
+│   ├── Navigation.tsx    # Header with theme toggle
+│   ├── Footer.tsx        # Site footer
+│   └── ThemeToggle.tsx   # Dark/light mode switcher
+├── lib/                   # Utilities
+│   └── ThemeProvider.tsx # Theme context
+└── public/               # Static assets
+```
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+- **Primary Color**: `#137fec` (Blue)
+- **Fonts**: Inter (body), Space Grotesk (display)
+- **Dark Mode**: Automatic theme switching
+- **Effects**: Glassmorphism, grid patterns, smooth animations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Available Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/` - Home with hero, skills, projects, about
+- `/blog` - Blog list with search & filters
+- `/blog/[slug]` - Individual blog posts
+- `/projects/[slug]` - Project case studies
+- `/contact` - Contact form
+- `/contact/success` - Success confirmation
+- `/resume` - Resume preview & download
+- `/tech-stack` - Technologies & tools
+- `/now` - Current focus & activities
+- `/academic` - Coursework & research
+- `/snippets` - Code snippet library
 
-## Deploy on Vercel
+## 🚢 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy to Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Production deployment
+vercel --prod
+```
+
+Or use the [Vercel Dashboard](https://vercel.com/new) to import this repository.
+
+### Other Platforms
+
+This Next.js app can be deployed to:
+
+- Netlify
+- Railway
+- AWS Amplify
+- Any platform supporting Node.js
+
+## 📝 Environment Variables
+
+Create a `.env.local` file for environment-specific variables:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://yoursite.com
+# Add other variables as needed
+```
+
+## 🔧 Customization
+
+### Update Content
+
+1. **Personal Info**: Edit `app/page.tsx`, `app/resume/page.tsx`
+2. **Projects**: Update `app/projects/[slug]/page.tsx`
+3. **Blog Posts**: Add content to `app/blog/`
+4. **Snippets**: Modify `app/snippets/page.tsx`
+
+### Modify Theme
+
+Colors and fonts are configured in:
+
+- `app/globals.css` - CSS variables and custom styles
+- `tailwind.config.ts` - Tailwind theme extension
+
+## 📄 License
+
+All rights reserved © 2024 Anesu Romeo Mutimbire
+
+## 🤝 Contact
+
+- **Email**: contact@anesu.dev
+- **GitHub**: [@anesu-romeo](https://github.com/anesu-romeo)
+- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+Built with ❤️ in Zimbabwe

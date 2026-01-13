@@ -83,12 +83,30 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">Email</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">contact@anesu.dev</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">armutimbire@gmail.com</p>
                       <a
-                        href="mailto:contact@anesu.dev"
+                        href="mailto:armutimbire@gmail.com"
                         className="text-sm text-primary hover:underline mt-2 inline-block"
                       >
                         Send an email →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 rounded-xl bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary shrink-0">
+                      <span className="material-symbols-outlined">phone</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">Phone</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">+263 77 268 8051</p>
+                      <a
+                        href="tel:+263772688051"
+                        className="text-sm text-primary hover:underline mt-2 inline-block"
+                      >
+                        Call me →
                       </a>
                     </div>
                   </div>
