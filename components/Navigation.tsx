@@ -68,13 +68,6 @@ export function Navigation() {
                     Tech Stack
                   </Link>
                   <Link
-                    href="/now"
-                    className="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
-                    onClick={() => setMoreMenuOpen(false)}
-                  >
-                    Now
-                  </Link>
-                  <Link
                     href="/academic"
                     className="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
                     onClick={() => setMoreMenuOpen(false)}
@@ -151,13 +144,6 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Tech Stack
-              </Link>
-              <Link
-                href="/now"
-                className="block text-sm font-medium text-slate-400 hover:text-white py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Now
               </Link>
               <Link
                 href="/academic"
