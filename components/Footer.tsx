@@ -52,7 +52,7 @@ export function Footer() {
                 <span className="material-symbols-outlined">code</span>
               </a>
               <a
-                href="https://linkedin.com/in/anesu-mutimbire"
+                href="https://www.linkedin.com/in/romeo-mutimbire-011b42282"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
