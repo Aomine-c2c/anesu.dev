@@ -236,6 +236,9 @@ export default function HomePage() {
                   <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
                     Tailwind CSS
                   </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    EmailJS
+                  </span>
                 </div>
               </div>
             </div>
