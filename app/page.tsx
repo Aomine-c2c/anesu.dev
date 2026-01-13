@@ -147,7 +147,9 @@ export default function HomePage() {
               <p className="text-slate-600 dark:text-slate-400">Some of the things I&apos;ve built recently.</p>
             </div>
             <Link
-              href="#"
+              href="https://github.com/Aomine-c2c"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center text-sm font-bold text-primary hover:text-blue-400"
             >
               View GitHub{" "}
@@ -158,71 +160,81 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
+            {/* Project 1: SwiftQueue Hospital Management */}
             <div className="group rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-300 dark:hover:border-white/10 transition-all hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 shadow-sm dark:shadow-none">
               <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-slate-400 dark:text-slate-700">
-                  <span className="material-symbols-outlined text-6xl opacity-20">shopping_cart</span>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900 dark:to-indigo-900 flex items-center justify-center text-blue-200 dark:text-white/20">
+                  <span className="material-symbols-outlined text-6xl opacity-20">local_hospital</span>
                 </div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                   <Link
-                    href="#"
-                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform"
-                  >
-                    View Demo
-                  </Link>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">E-Commerce API</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
-                  A robust RESTful API built with Django Rest Framework handling authentication, 
-                  product management, and order processing securely.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
-                    Django
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
-                    DRF
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
-                    PostgreSQL
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="group rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-300 dark:hover:border-white/10 transition-all hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 shadow-sm dark:shadow-none">
-              <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 flex items-center justify-center text-indigo-200 dark:text-white/20">
-                  <span className="material-symbols-outlined text-6xl opacity-20">school</span>
-                </div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Link
-                    href="#"
-                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform"
+                    href="https://github.com/Aomine-c2c/SwiftQueue-Hospital-Managent-System"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform hover:bg-slate-100"
                   >
                     View Code
                   </Link>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">University Portal</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">SwiftQueue Hospital Management</h3>
                 <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
-                  A student management system allowing course registration and result checking. 
-                  Features a responsive React frontend.
+                  AI-powered hospital management system with real-time queue monitoring, telemedicine, 
+                  and intelligent triage. Features patient management, appointments, and analytics dashboard.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    React 18
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    FastAPI
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    PostgreSQL
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Docker
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2: Regisbridge School Management */}
+            <div className="group rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 overflow-hidden hover:border-slate-300 dark:hover:border-white/10 transition-all hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-primary/5 shadow-sm dark:shadow-none">
+              <div className="aspect-video w-full bg-slate-100 dark:bg-slate-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900 dark:to-purple-900 flex items-center justify-center text-indigo-200 dark:text-white/20">
+                  <span className="material-symbols-outlined text-6xl opacity-20">school</span>
+                </div>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                  <Link
+                    href="https://github.com/Aomine-c2c/Regisbridge-pvt-school-website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-white text-black px-6 py-2 font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform hover:bg-slate-100"
+                  >
+                    View Code
+                  </Link>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Regisbridge School Management</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+                  Comprehensive school management system with student/parent/teacher portals, 
+                  admin dashboard, attendance tracking, and real-time analytics.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
                     React
                   </span>
                   <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
-                    Tailwind
+                    TypeScript
                   </span>
                   <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
                     Node.js
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                    Tailwind CSS
                   </span>
                 </div>
               </div>
