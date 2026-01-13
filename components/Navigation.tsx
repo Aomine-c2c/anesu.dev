@@ -34,12 +34,6 @@ export function Navigation() {
               About
             </Link>
             <Link
-              href="/blog"
-              className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
-            >
-              Blog
-            </Link>
-            <Link
               href="/#contact"
               className="text-sm font-medium text-slate-400 hover:text-white transition-colors"
             >
@@ -133,13 +127,6 @@ export function Navigation() {
               onClick={() => setMobileMenuOpen(false)}
             >
               About
-            </Link>
-            <Link
-              href="/blog"
-              className="block text-sm font-medium text-slate-400 hover:text-white py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Blog
             </Link>
             <Link
               href="/#contact"
