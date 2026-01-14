@@ -153,10 +153,17 @@ export default function ResumePage() {
                   </div>
                 </div>
 
-                <button className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98]">
+                <Link
+                  href="/contact"
+                  className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98]"
+                >
                   <span className="material-symbols-outlined">download</span>
                   <span>Download PDF</span>
-                </button>
+                </Link>
+                
+                <p className="text-xs text-slate-500 dark:text-slate-400 text-center mt-2">
+                  Contact me to request the full PDF version
+                </p>
 
                 <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-white/10">
                   <span className="flex items-center gap-1">

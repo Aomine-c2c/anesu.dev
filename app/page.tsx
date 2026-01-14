@@ -516,12 +516,12 @@ export default function HomePage() {
                 className="w-full rounded-lg bg-slate-50 dark:bg-card-dark border border-slate-200 dark:border-white/10 px-4 py-3 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-600 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               ></textarea>
             </div>
-            <button
-              type="button"
-              className="w-full rounded-lg bg-slate-900 dark:bg-white py-3 text-sm font-bold text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
+            <Link
+              href="/contact"
+              className="w-full rounded-lg bg-slate-900 dark:bg-white py-3 text-sm font-bold text-white dark:text-black hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors text-center"
             >
               Send Message
-            </button>
+            </Link>
           </form>
 
           <div className="mt-12 flex justify-center gap-6">
