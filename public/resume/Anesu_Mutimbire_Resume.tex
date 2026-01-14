@@ -1,0 +1,167 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[margin=0.5in]{geometry}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Anesu Romeo Mutimbire} \\ \vspace{1pt}
+    \small \faIcon{phone} +263 XXX XXX XXX $|$ \href{mailto:armutimbire@gmail.com}{\faIcon{envelope} \underline{armutimbire@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/romeo-mutimbire-011b42282}{\faIcon{linkedin} \underline{LinkedIn}} $|$
+    \href{https://github.com/Aomine-c2c}{\faIcon{github} \underline{GitHub}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Great Zimbabwe University}{Masvingo, Zimbabwe}
+      {Bachelor of Science in Computer Science}{2021 -- Present}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Web Development}
+        \resumeItem{Focus: Backend Web Development, API Design, Database Architecture}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Full Stack Developer}{2023 -- 2024}
+      {SwiftQueue Hospital Management System}{}
+      \resumeItemListStart
+        \resumeItem{Developed AI-powered healthcare platform with real-time queue management system serving multiple hospital departments}
+        \resumeItem{Built RESTful APIs using FastAPI with PostgreSQL database, implementing efficient query optimization and data validation}
+        \resumeItem{Created responsive React interface with TypeScript, featuring real-time updates and patient dashboard}
+        \resumeItem{Implemented Docker containerization for consistent development and deployment environments}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Full Stack Developer}{2023}
+      {Regisbridge School Management System}{}
+      \resumeItemListStart
+        \resumeItem{Built comprehensive school management platform with student records, attendance tracking, and grading systems}
+        \resumeItem{Developed using React, TypeScript, and Node.js with PostgreSQL database backend}
+        \resumeItem{Implemented role-based access control with JWT authentication for teachers, students, and administrators}
+        \resumeItem{Deployed application using Docker containers with automated CI/CD pipeline}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Backend Developer}{2023}
+      {GZU Online Marketplace}{}
+      \resumeItemListStart
+        \resumeItem{Created university marketplace platform enabling students to buy/sell items and services within campus community}
+        \resumeItem{Developed Django backend with user authentication using JWT and secure payment processing integration}
+        \resumeItem{Implemented category-based search and filtering system with Bootstrap frontend for responsive design}
+        \resumeItem{Optimized database queries for improved performance handling concurrent user transactions}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Freelance Developer}{2022 -- Present}
+      {Self-Employed}{}
+      \resumeItemListStart
+        \resumeItem{Built custom web solutions for local businesses using modern frameworks including Next.js and React}
+        \resumeItem{Specialized in Next.js applications with Tailwind CSS, deployed on Vercel platform}
+        \resumeItem{Provided ongoing maintenance and feature enhancements for client websites}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, TypeScript, JavaScript, Java, C++, HTML/CSS, SQL} \\
+     \textbf{Frameworks \& Libraries}{: Django, FastAPI, React, Next.js 14, Node.js, Express.js, Tailwind CSS, Bootstrap} \\
+     \textbf{Databases}{: PostgreSQL, SQLite, Redis} \\
+     \textbf{Tools \& Technologies}{: Git/GitHub, Docker, Vite, Vercel, JWT, REST APIs, EmailJS} \\
+     \textbf{Concepts}{: Object-Oriented Programming, RESTful API Design, Database Design, Authentication \& Authorization, Responsive Web Design}
+    }}
+ \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Personal Portfolio Website} $|$ \emph{Next.js, TypeScript, Tailwind CSS, EmailJS}}{2024}
+          \resumeItemListStart
+            \resumeItem{Developed modern portfolio website showcasing projects, blog posts, and technical skills}
+            \resumeItem{Implemented dark mode, EmailJS contact form integration, and responsive design patterns}
+            \resumeItem{Deployed on Vercel with automated deployments from GitHub repository}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
