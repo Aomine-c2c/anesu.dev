@@ -1,0 +1,151 @@
+% Modern Developer CV for Anesu Romeo Mutimbire
+% Clean, minimalist, one-page design
+
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+
+% Color scheme - Neutral with charcoal accent
+\definecolor{primary}{RGB}{45,55,72}      % Charcoal
+\definecolor{accent}{RGB}{66,153,225}     % Subtle blue
+\definecolor{text}{RGB}{30,30,30}         % Near black
+\definecolor{subtext}{RGB}{100,100,100}   % Gray
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    pdftitle={Anesu Romeo Mutimbire - CV},
+    pdfauthor={Anesu Romeo Mutimbire}
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Section formatting
+\titleformat{\section}
+    {\large\bfseries\color{primary}}
+    {}{0em}
+    {}
+    [\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Custom commands
+\newcommand{\header}[2]{
+    {\Huge\bfseries\color{primary}#1}\\[4pt]
+    {\large\color{subtext}#2}
+}
+
+\newcommand{\contactline}[1]{
+    {\small\color{text}#1}
+}
+
+\newcommand{\project}[4]{
+    \textbf{#1} \hfill {\small\color{subtext}#2}\\
+    {\small #3}\\
+    {\small\color{subtext}\textit{#4}}\\[4pt]
+}
+
+\newcommand{\skill}[2]{
+    \textbf{#1:} {\small #2}\\[2pt]
+}
+
+% Document
+\begin{document}
+
+% ========== HEADER ==========
+\begin{center}
+    \header{Anesu Romeo Mutimbire}{Computer Science Student | Software \& Systems Builder}
+    
+    \vspace{8pt}
+    
+    \contactline{
+        \faIcon{envelope} \href{mailto:armutimbire@gmail.com}{armutimbire@gmail.com} \quad
+        \faIcon{github} \href{https://github.com/Aomine-c2c}{github.com/Aomine-c2c} \quad
+        \faIcon{globe} \href{https://anesu.dev}{anesu.dev} \quad
+        \faIcon{map-marker-alt} Zimbabwe
+    }
+\end{center}
+
+\vspace{6pt}
+
+% ========== PROFILE ==========
+\section*{Profile}
+Computer Science student with focus on building scalable software and systems. Experience developing full-stack applications, implementing AI-powered platforms, and designing database-driven solutions. Skilled in modern web frameworks, API development, and containerization.
+
+\vspace{4pt}
+
+% ========== CORE DOMAINS ==========
+\section*{Core Domains}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\skill{Software Development}{Python, TypeScript, JavaScript, Java, C++, Object-Oriented Design}
+\skill{Web \& Platform Engineering}{React, Next.js, Django, FastAPI, Node.js, RESTful APIs}
+\skill{Data \& Databases}{PostgreSQL, Database Design, Query Optimization, Data Modeling}
+\skill{Systems \& DevOps}{Docker, Git/GitHub, CI/CD, Linux, Vercel Deployment}
+\skill{Security \& Auth}{JWT, Authentication \& Authorization, Secure API Design}
+\end{tabularx}
+
+\vspace{4pt}
+
+% ========== PROJECTS ==========
+\section*{Projects}
+
+\project{Kallos Veritas}{Live $\cdot$ \href{https://kallosveritas.com}{kallosveritas.com}}{E-commerce platform with product management, cart system, and secure checkout functionality}{Next.js, TypeScript, PostgreSQL, Prisma, Stripe}
+
+\project{Personal Portfolio}{Live $\cdot$ \href{https://anesu.dev}{anesu.dev}}{Modern portfolio showcasing projects, technical skills, and blog content with dark mode and responsive design}{Next.js 14, TypeScript, Tailwind CSS, EmailJS}
+
+\project{SwiftQueue}{Hospital Management System}{AI-powered healthcare platform with real-time queue management, patient tracking, and department coordination}{React 18, FastAPI, PostgreSQL, Docker}
+
+\project{Regisbridge}{School Management $\cdot$ \href{https://regisbridge.page}{regisbridge.page}}{Comprehensive platform with student records, attendance tracking, grading systems, and role-based access control}{React, TypeScript, Node.js, Docker}
+
+\project{GZU Online Marketplace}{University Marketplace}{Platform enabling students to buy/sell items and services within campus community}{Django, Python, JWT, Bootstrap}
+
+\vspace{2pt}
+{\small\color{subtext}Additional projects: \href{https://github.com/Aomine-c2c}{github.com/Aomine-c2c}}
+
+\vspace{4pt}
+
+% ========== EDUCATION ==========
+\section*{Education}
+
+\textbf{Bachelor of Science in Computer Science} \hfill {\small\color{subtext}2021 -- Present}\\
+Great Zimbabwe University, Zimbabwe\\
+{\small\color{subtext}Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Web Development}
+
+\vspace{4pt}
+
+% ========== TOOLS & TECHNOLOGIES ==========
+\section*{Tools \& Technologies}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\textbf{Languages} & Python, TypeScript, JavaScript, Java, C++, HTML/CSS, SQL \\[2pt]
+\textbf{Frameworks} & Django, FastAPI, React, Next.js 14, Node.js, Express.js, Tailwind CSS \\[2pt]
+\textbf{Databases} & PostgreSQL, SQLite, Redis \\[2pt]
+\textbf{Tools} & Git, GitHub, VS Code, Docker, Vite, Vercel, Postman \\[2pt]
+\textbf{Platforms} & Linux (Ubuntu), Windows, Vercel, Netlify
+\end{tabularx}
+
+\vspace{12pt}
+
+% ========== FOOTER ==========
+\begin{center}
+    {\small\color{subtext}Anesu Romeo Mutimbire $\cdot$ 2024 $\cdot$ \href{https://github.com/Aomine-c2c}{github.com/Aomine-c2c}}
+\end{center}
+
+\end{document}
