@@ -44,11 +44,44 @@ export default function ResumePage() {
                       <div className="space-y-4">
                         <div>
                           <div className="flex justify-between items-baseline">
+                            <h4 className="font-semibold text-slate-900">Full Stack Developer</h4>
+                            <span className="text-xs text-slate-600">2023 - 2024</span>
+                          </div>
+                          <p className="text-xs text-slate-600 italic">SwiftQueue Hospital Management System</p>
+                          <p className="text-xs text-slate-600 mt-1">
+                            Developed AI-powered healthcare platform with real-time queue management. Built REST APIs with FastAPI, implemented PostgreSQL database, and created responsive React interface.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <div className="flex justify-between items-baseline">
+                            <h4 className="font-semibold text-slate-900">Full Stack Developer</h4>
+                            <span className="text-xs text-slate-600">2023</span>
+                          </div>
+                          <p className="text-xs text-slate-600 italic">Regisbridge School Management System</p>
+                          <p className="text-xs text-slate-600 mt-1">
+                            Built comprehensive school management platform with student records, attendance tracking, and grading systems. Used React, TypeScript, and Node.js with Docker deployment.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <div className="flex justify-between items-baseline">
+                            <h4 className="font-semibold text-slate-900">Backend Developer</h4>
+                            <span className="text-xs text-slate-600">2023</span>
+                          </div>
+                          <p className="text-xs text-slate-600 italic">GZU Online Marketplace</p>
+                          <p className="text-xs text-slate-600 mt-1">
+                            Created university marketplace platform enabling students to buy/sell items and services. Developed with Django backend, implemented user authentication with JWT, and Bootstrap frontend.
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <div className="flex justify-between items-baseline">
                             <h4 className="font-semibold text-slate-900">Freelance Developer</h4>
                             <span className="text-xs text-slate-600">2022 - Present</span>
                           </div>
                           <p className="text-xs text-slate-600 mt-1">
-                            Built custom web solutions for local businesses using WordPress and React.
+                            Built custom web solutions for local businesses using modern frameworks. Specialized in Next.js applications with Tailwind CSS, deployed on Vercel.
                           </p>
                         </div>
                       </div>
@@ -75,9 +108,19 @@ export default function ResumePage() {
                       </h3>
                       <div className="flex flex-wrap gap-2 text-xs">
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded">Python</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">TypeScript</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">JavaScript</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">Java</span>
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded">Django</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">FastAPI</span>
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded">React</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">Next.js</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">Node.js</span>
                         <span className="px-2 py-1 bg-primary/10 text-primary rounded">PostgreSQL</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">Docker</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">Git</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">REST APIs</span>
+                        <span className="px-2 py-1 bg-primary/10 text-primary rounded">JWT</span>
                       </div>
                     </div>
                   </div>
