@@ -74,13 +74,6 @@ export function Navigation() {
                   >
                     Academic
                   </Link>
-                  <Link
-                    href="/snippets"
-                    className="block px-4 py-2.5 text-sm text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
-                    onClick={() => setMoreMenuOpen(false)}
-                  >
-                    Code Snippets
-                  </Link>
                 </div>
               )}
             </div>
@@ -151,13 +144,6 @@ export function Navigation() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Academic
-              </Link>
-              <Link
-                href="/snippets"
-                className="block text-sm font-medium text-slate-400 hover:text-white py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Code Snippets
               </Link>
             </div>
           </div>
